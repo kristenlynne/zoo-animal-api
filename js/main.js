@@ -3,10 +3,10 @@
 // https://zoo-animal-api.herokuapp.com/animals/rand/
 
 /* Todo 
-- fetch data
-- manipulate data and display in DOM
-- create carousel of random animals
-- refresh page for more random animals!
+x fetch data
+x manipulate data and display in DOM
+x create carousel of random animals
+x refresh page for more random animals!
 - style CSS
 */
 
@@ -20,10 +20,25 @@ async function getZooAnimals() {
     const res = await fetch(url);
     const data = await res.json();
       console.log(data);
+      resetDOM();
       data.forEach(animal => {
         console.log(animal)
         addToDOM(animal)
       })
+      const slidesContainer = document.getElementById("slides-container");
+      const slide = document.querySelector(".slide");
+      const prevButton = document.getElementById("slide-arrow-prev");
+      const nextButton = document.getElementById("slide-arrow-next");
+ 
+      nextButton.addEventListener("click", () => {
+        const slideWidth = slide.clientWidth;
+        slidesContainer.scrollLeft += slideWidth;
+      });
+ 
+      prevButton.addEventListener("click", () => {
+        const slideWidth = slide.clientWidth;
+        slidesContainer.scrollLeft -= slideWidth;
+      });
   }
   catch (err) {
     console.log(`Error: ${err}`)
@@ -31,10 +46,10 @@ async function getZooAnimals() {
 }
 
 function addToDOM(animal) {
-  const section = document.createElement('section');
-  section.classList.add('animal')
+  const li = document.createElement('li');
+  li.classList.add('slide')
 
-  section.innerHTML = `
+  li.innerHTML = `
     <div>
       <h1>${animal.name}</h1>
       <img src="${animal.image_link}" alt="${animal.name}"/>
@@ -51,8 +66,18 @@ function addToDOM(animal) {
       </ul>
     </div>
   `;
-  document.querySelector('#animalsContainer').appendChild(section);
+  document.querySelector('#slides-container').appendChild(li);
 }
+
+function resetDOM() {
+  window.addEventListener("load", event => {
+    document.querySelector('button').onclick = function() {
+        location.reload(true);
+    }
+  });
+}
+
+/////////
 
 // -- DATA --
 // active_time: "Diurnal"
