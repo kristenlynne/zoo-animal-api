@@ -6,7 +6,9 @@
     	<meta name="keywords" content="one, two, three">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>Title in the tab</title>
+		<title>Random Zoo Animal Carousel</title>
+
+		<script src="https://kit.fontawesome.com/4a9c518b56.js" crossorigin="anonymous"></script>
 
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/reset.css">
@@ -14,23 +16,39 @@
 	</head>
 	<body>
 
-		<h1>Zoo Animals</h1>
-		<button type="button" name="button">Get Animals</button>
-
-		<section class="slider-wrapper">
-
-			<button class="slide-arrow" id="slide-arrow-prev">
-				&#8249;
-			  </button>
-			   
-			  <button class="slide-arrow" id="slide-arrow-next">
-				&#8250;
-			  </button>
-
-			  <ul class="slides-container" id="slides-container"></ul>
-
-		</section>
-
+		<div id="page-container">
+			<div id="content-wrap">
+				
+				<main>
+					<section class="slider-wrapper">
+		
+						<button class="slide-arrow" id="slide-arrow-prev">
+							&#8249;
+						  </button>
+						   
+						  <button class="slide-arrow" id="slide-arrow-next">
+							&#8250;
+						  </button>
+			
+						  <ul class="slides-container" id="slides-container"></ul>
+						  
+					</section>
+					<button class="reloadPage">Get New Animals</button>
+				</main>
+			</div>
+			<footer id="footer">
+				<h1><b>Random Zoo Animal Carousel</b></h1>
+				<p>Made using the <a href="https://zoo-animal-api.herokuapp.com/">Zoo Animal API</a> by Kristen Smith</p>
+				<ul>
+					<ul>
+						<li><a href="https://github.com/kristenlynne"><i class="fa-brands fa-github"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/kristen-lynne/"><i class="fa-brands fa-linkedin"></i></a></li>
+						<li><a href="https://twitter.com/kristencancode"><i class="fa-brands fa-twitter"></i></a></li>
+					</ul>
+				</ul>
+			</footer>
+		</div>
+		
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
