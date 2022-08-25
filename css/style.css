@@ -10,7 +10,7 @@
 body {
   max-height: 100vh;
   background: url('../img/animalbackground.jpeg');
-  /* font-size: 62.5%; */
+  font-family: sans-serif;
 }
 
 b {
@@ -40,7 +40,7 @@ b {
 }
 
 footer ul {
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 footer li {
@@ -51,11 +51,11 @@ footer li {
 }
 
 footer a {
-  color: #a37314;
+  color: rgb(87, 90, 101);
 }
 
 footer a:hover {
-  color: #5f440d;
+  color: rgb(116, 120, 135);
 }
 
 footer h1 {
@@ -74,7 +74,7 @@ footer p {
 img{
   display: block;
   margin: 0 auto;
-  max-height: 325px;
+  max-height: 315px;
   max-width: 95%;
 }
 
@@ -96,19 +96,26 @@ main {
   align-items: center;
 }
 
-header {
-  background: #fff;
-  text-align: center;
-  height: 2.5em;
+.reloadPage {
+  border: none;
+  background: rgb(72, 75, 84);
+  border-radius: 5px;
+  height: 50px;
+  width: 200px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
 }
 
-.reloadPage {
-  width: 150px;
+.reloadPage:hover {
+  background: rgb(87, 90, 101);
+  cursor: pointer;
 }
 
 .slider-wrapper {
   text-align: center;
-  margin: 1rem;
+  margin: .5rem;
   width: 55%;
   position: relative;
   overflow: hidden;
@@ -121,21 +128,25 @@ header {
   display: flex;
   list-style: none;
   margin: 0;
-  padding: 0;
   overflow: scroll;
   scroll-behavior: smooth;
 }
 
+.slides-container ul {
+  padding: 10px 0;
+}
+
 .slides-container li {
   padding-bottom: 3px;
+  font-size: 14px;
 }
  
 .slide {
   width: 75%;
   height: 100%;
   flex: 1 0 100%;
-  background: pink;
 }
+
 .slides-container {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -210,4 +221,37 @@ header {
 }
 .slide:nth-child(10) {
   background: #CC7D6A;
+}
+
+@media screen and (max-width: 900px) {
+  img{
+    max-height: 450px;
+    max-width: 95%;
+  }
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  
+  .reloadPage {
+    height: 50px;
+    width: 200px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .slider-wrapper {
+    margin: 1rem;
+    width: 95%;
+  }
+   
+  .slides-container {
+    /* height: calc(90vh - 2rem); */
+    height: fit-content;
+    width: 100%;
+  }
 }

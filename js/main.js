@@ -6,9 +6,8 @@
 x fetch data
 x manipulate data and display in DOM
 x create carousel of random animals
-x refresh page for more random animals!
-- make it so duplicate animals don't show :/
-- style CSS
+x refresh page for new set of random animals!
+x style CSS
 */
 
 // Event Listeners
@@ -77,21 +76,3 @@ function addToDOM(animal) {
   `;
   document.querySelector('#slides-container').appendChild(li);
 }
-
-/////////
-
-// -- DATA --
-// active_time: "Diurnal"
-// animal_type: "Bird"
-// diet: "Squid, crustaceans, and fish"
-// geo_range: "Sub-Antarctic islands"
-// habitat: "Ocean and islands"
-// id: 99
-// image_link: "https://upload.wikimedia.org/wikipedia/commons/b/be/SGI-2016-South_Georgia_%28Fortuna_Bay%29%E2%80%93King_penguin_%28Aptenodytes_patagonicus%29_04.jpg"
-// latin_name: "Aptenodytes patagonius"
-// length_max: "3.1"
-// length_min: "2.8"
-// lifespan: "25"
-// name: "King Penguin"
-// weight_max: "45"
-// weight_min: "20"
